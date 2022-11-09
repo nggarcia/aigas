@@ -17,8 +17,7 @@ import {
   Divider,
   Select,
   Upload,
-  InputNumber,
-} from 'antd';
+ } from 'antd';
 
 import { DisconnectOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { findAllByDisplayValue } from "@testing-library/react";
@@ -64,15 +63,7 @@ const residences = [
             value: 'unquillo',
             label: 'Unquillo',
           },
-
-            //children: [
-              //{
-               // value: 'zhonghuamen',
-               // label: 'Zhong Hua Men',
-             // },
-            //],
-            
-        
+              
         ],
       },
 
@@ -178,8 +169,6 @@ const App = () => {
   //}
   //)
   //);
-
-  
   return (
     <Form {...formItemLayout}
     form={form}
@@ -195,10 +184,28 @@ const App = () => {
 <Divider orientation="left">Gestión de Matriculados:</Divider>
 <br></br>
     <Row>
-
-
-
     <Col span={6}>
+        <Form.Item name="matricula"label="Matrícula"
+         rules={[
+        {
+          required: true,
+          message: 'Por favor ingresa tu matrícula!',
+          whitespace: true,
+        },
+        ]}
+       >         
+        <Input/>
+        </Form.Item>        
+      </Col>
+   
+      <Col span={2}>
+      <Button type="primary" icon={<SearchOutlined/>}htmlType="Buscar">
+            Buscar
+          </Button>
+      </Col>
+
+     <Col span={6}>
+      {/*
         <Form.Item label="Categoría">
           <Select 
           placeholder= "Selecciona una categoría">
@@ -206,36 +213,13 @@ const App = () => {
             <Select.Option value="dos">2</Select.Option>
             <Select.Option value="tres">3</Select.Option>
           </Select>
-        </Form.Item></Col>
-      <Col span={6}>
-
-        <Form.Item name="matricula"label="Matrícula"
-        rules={[
-        {
-          required: true,
-          message: 'Por favor ingresa tu matrícula!',
-          whitespace: true,
-          
-        },
-      ]}
-    >         
-          <Input/>
         </Form.Item>
-
-        
+        */}
       </Col>
-
-
 
       
 
-      <Col span={2}>
-      <Button type="primary" icon={<SearchOutlined/>}htmlType="Buscar">
-            Buscar
-          </Button>
-      </Col>
       <Col span={6}>
-
       <Form.Item label="Subir" valuePropName="fileList">
 
           <Upload action="/upload.do" listType="picture-card">
@@ -248,14 +232,10 @@ const App = () => {
         </Form.Item>
       </Col>
       <Col span={2}></Col>
-      
-
-      
-
     </Row>
     
     <Row>
-    <Col span={6}>
+     <Col span={6}>
         <Form.Item label="Tipo Doc">
           <Select 
           placeholder="Selecciona un tipo documento" defaultValue="DNI">
@@ -264,6 +244,7 @@ const App = () => {
             <Select.Option value="CEDULA">CEDULA</Select.Option>
           </Select>
         </Form.Item></Col>
+
       <Col span={6}>
       <Form.Item name="nrodocumento"label="Nro Doc"
       rules={[
@@ -278,9 +259,13 @@ const App = () => {
         </Form.Item>        
       </Col>
       <Col span={6}></Col>
+      <Form.Item {...tailFormItemLayout}>
+            <Button type="primary" htmlType="submit">
+                Registrar 
+            </Button>
+          </Form.Item>
       <Col span={6}></Col>
     </Row>
-
 
     <Row>
       <Col span={6}>
@@ -299,8 +284,9 @@ const App = () => {
       </Checkbox>
     </Form.Item>
       </Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
+      <Col span={7}></Col>
+      <Button type='primary'>Consultar</Button>
+      <Col span={5}></Col>
   </Row>
 
     
@@ -339,8 +325,8 @@ const App = () => {
       <Input />
     </Form.Item>
       </Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
+      <Col span={7}></Col>
+      <Col span={5}><Button type='primary'>Eliminar</Button></Col>
   </Row>
 
   <Row>
@@ -350,8 +336,8 @@ const App = () => {
       </Form.Item>
       </Col>
       <Col span={6}></Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
+      <Col span={7}></Col>
+      <Col span={5}><Button type="primary" danger>Salir</Button></Col>
   </Row>   
       
 
@@ -574,11 +560,24 @@ const App = () => {
       <Input />
     </Form.Item>
       </Col>
-      <Col span={6}></Col>
+      <Col span={6}><Form.Item
+      name="obra social"
+      label="Obra Social"
+      //tooltip="What do you want others to call you?"
+      rules={[
+        {
+          required: false,
+          message: 'Por favor ingresa tu Obra Social!',
+          whitespace: true,
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
     </Row>
-
+{/*
     <Row>
       <Col span={6}>
       <Form.Item
@@ -612,44 +611,18 @@ const App = () => {
     >
       <Input />
     </Form.Item>
+
+    
       </Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
-    
-
-    <Row>
-      <Col span={6}>
-
-      {/*<Form.Item
-      name="profesión"
-      label="Profesión"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor seleccione una profesión!',
-        },
-      ]}
-    >
-      <Select placeholder="seleccione una profesión">
-        <Option value="electricista">Electricista</Option>
-        <Option value="plomero">Plomero</Option>
-        <Option value="docente">Docente</Option>
-        <Option value="maestro mayor de obras">Maestro M de Obras</Option>
-      </Select>
-    </Form.Item>
     */}
-
-      </Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>      
-    </Row>
 
     <Row>
     <Col span={6}>
       <Col span={24}>
-        <Form.Item
+          {/*<Form.Item
           name="artículo 6"
           label="Artículo 6"
           rules={[
@@ -670,50 +643,24 @@ const App = () => {
           5. e) Ser elegido para integrar órganos sociales,
           6. f) Gozar de los bene cios que otorga la entidad." showCount maxLength={100} tex/>
         </Form.Item>
-        
+        */}
+              
         </Col>
       </Col> 
 
         <Col span={1}></Col> 
         <Col span={2}>
-          <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit">
-                Register
-            </Button>
-          </Form.Item></Col>
+         
+          </Col>
         <Col span={1}></Col>
-        <Col span={2}><Button type='primary'>Editar</Button> </Col>
-        <Col span={2}><Button type='primary'>Limpiar</Button></Col>
+        <Col span={2}> </Col>
+        <Col span={2}></Col>
         <Col span={1}></Col> 
-        <Col span={3}><Button type="primary" danger>Salir</Button></Col>
+        <Col span={3}></Col>
          </Row>
        
 
-    <Form.Item
-      name="agreement"
-      valuePropName="checked"
-      rules={[
-        {
-          validator: (_, value) =>
-            value ? Promise.resolve() : Promise.reject(new Error('Debe aceptar el acuerdo')),
-        },
-      ]}
-      {...tailFormItemLayout}
-    >
-      <Checkbox>
-        Debe leer el acuerdo<a href=" ">Acuerdo</a>
-      </Checkbox>
-
-      
-        
-      
-
-      {/*}
-      <Form.Item label="Confirmar">                     
-          <Button type='primary'>Guardar</Button>          
-      </Form.Item>
-      */}
-      </Form.Item>
+   
         
       </Form>
 );
@@ -722,11 +669,6 @@ const App = () => {
 //export default function Matriculados () {
 
 export default App;
-//export default () => <FormDisabledDemo/>;
-    //<div>
-    //  <h1>Lista de Matriculados</h1>
-   // </div>
-  //)
-//}
+
 
 
