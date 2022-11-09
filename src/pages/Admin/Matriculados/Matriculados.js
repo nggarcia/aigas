@@ -180,7 +180,6 @@ const App = () => {
     }}
     scrollToFirstError
   >
-
 <Divider orientation="left">Gestión de Matriculados:</Divider>
 <br></br>
     <Row>
@@ -217,8 +216,6 @@ const App = () => {
         */}
       </Col>
 
-      
-
       <Col span={6}>
       <Form.Item label="Subir" valuePropName="fileList">
 
@@ -228,10 +225,10 @@ const App = () => {
               <div style={{ marginTop: 8 }}>Upload</div>
             </div>
           </Upload>
-
         </Form.Item>
       </Col>
       <Col span={2}></Col>
+
     </Row>
     
     <Row>
@@ -265,9 +262,9 @@ const App = () => {
             </Button>
           </Form.Item>
       <Col span={6}></Col>
-    </Row>
+  </Row>
 
-    <Row>
+  <Row>
       <Col span={6}>
       <Form.Item name="date-picker" label="Fecha Matricula:" {...config}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
@@ -291,7 +288,7 @@ const App = () => {
 
     
 
-<Row>
+  <Row>
       <Col span={6}>
       <Form.Item
       name="name"
@@ -341,7 +338,7 @@ const App = () => {
   </Row>   
       
 
-      <Row>
+  <Row>
       <Col span={6}>
         <Form.Item label="Estado Civil">
           <Select
@@ -363,7 +360,6 @@ const App = () => {
       
       </Col>
       <Col span={3}></Col>
-      
     </Row>
     
     
@@ -420,7 +416,7 @@ const App = () => {
 
    {/*} <Divider></Divider>*/}
  
-    <Row>
+  <Row>
       <Col span={6}>
       <Form.Item
       name="localidad"
@@ -436,10 +432,9 @@ const App = () => {
       <Cascader options={residences} />
     </Form.Item>
       </Col>
-    </Row>
-    
-
-    <Row>
+  </Row>
+  
+  <Row>
       <Col span={6}>
       <Form.Item
       name="calle"
@@ -464,9 +459,9 @@ const App = () => {
 
       <Col span={6}></Col>
       <Col span={6}></Col>
-    </Row>
+  </Row>
 
-    <Row>
+  <Row>
       <Col span={6}>
       <Form.Item
       name="celular"
@@ -505,7 +500,7 @@ const App = () => {
     </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
-    </Row>
+  </Row>
     
 
     {/*<Form.Item
@@ -556,7 +551,7 @@ const App = () => {
           message: 'Por favor ingresa tu E-mail!',
         },
       ]}
-    >
+       >
       <Input />
     </Form.Item>
       </Col>
@@ -571,12 +566,13 @@ const App = () => {
           whitespace: true,
         },
       ]}
-    >
+      >
       <Input />
-    </Form.Item></Col>
+      </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
-    </Row>
+  </Row>
+
 {/*
     <Row>
       <Col span={6}>
@@ -619,8 +615,9 @@ const App = () => {
   </Row>
     */}
 
+{/*
     <Row>
-    <Col span={6}>
+     <Col span={6}>
       <Col span={24}>
           {/*<Form.Item
           name="artículo 6"
@@ -643,31 +640,16 @@ const App = () => {
           5. e) Ser elegido para integrar órganos sociales,
           6. f) Gozar de los bene cios que otorga la entidad." showCount maxLength={100} tex/>
         </Form.Item>
-        */}
+        
               
         </Col>
-      </Col> 
+      </Col>         
+    </Row>
+    */}
 
-        <Col span={1}></Col> 
-        <Col span={2}>
-         
-          </Col>
-        <Col span={1}></Col>
-        <Col span={2}> </Col>
-        <Col span={2}></Col>
-        <Col span={1}></Col> 
-        <Col span={3}></Col>
-         </Row>
-       
-
-   
-        
-      </Form>
+    </Form>
 );
 };
-
-//export default function Matriculados () {
-
 export default App;
 
 
