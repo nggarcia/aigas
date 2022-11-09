@@ -1,0 +1,24 @@
+// .App {
+//   color: red; //para los h1 y h2 se repiten las clases
+// }
+// .App h2 {
+//   color: green;
+// }
+// .App {
+//   h1 {
+//     color: red;// con sass no se repiten las clases
+//     span {
+//       font-weight: 100;//anidamos elementos
+//     }
+//   }
+//   h2 {
+//     color: blue;
+//   }
+// }
+@import '~antd/dist/antd.css';
+@import './scss/index.scss';//se importa indice de variables
+.App {
+  h1 {
+    color: $primary-color;
+  }
+}
