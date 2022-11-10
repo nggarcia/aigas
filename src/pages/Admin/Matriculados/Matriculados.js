@@ -266,7 +266,7 @@ const App = () => {
 
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Fecha Matricula:" {...config}>
+      <Form.Item name="date-picker" label="Fecha Mat:" {...config}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>
@@ -328,7 +328,7 @@ const App = () => {
 
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Fecha de Nac:" {...config}>
+      <Form.Item name="date-picker" label="Fecha Nac:" {...config}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>

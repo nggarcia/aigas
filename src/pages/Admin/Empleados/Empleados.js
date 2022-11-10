@@ -314,8 +314,8 @@ const App = () => {
           <Select 
           placeholder= "Selecciona un cargo">
             <Select.Option value="uno">Administrativo</Select.Option>
-            <Select.Option value="dos">Contador</Select.Option>
-            <Select.Option value="tres">Miembro de Comisión</Select.Option>
+            <Select.Option value="dos">Miembro de Comision Directiva</Select.Option>
+            <Select.Option value="tres">Contador</Select.Option>
           </Select>
         </Form.Item></Col>
       <Col span={7}></Col>
