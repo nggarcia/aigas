@@ -174,7 +174,7 @@ const App = () => {
 <Divider orientation="left">Gestión de Empleados:</Divider>
 <br></br>
     <Row>
-    <Col span={6}>
+     <Col span={6}>
         <Form.Item name="legajo"label="Legajo"
          rules={[
         {
@@ -194,11 +194,7 @@ const App = () => {
           </Button>
       </Col>
 
-     <Col span={6}>
-      
-       
-        
-      </Col>
+     <Col span={6}></Col>
 
       <Col span={6}>
       <Form.Item label="Subir" valuePropName="fileList">
@@ -212,8 +208,7 @@ const App = () => {
         </Form.Item>
       </Col>
       <Col span={2}></Col>
-
-    </Row>
+   </Row>
     
     <Row>
      <Col span={6}>
@@ -250,7 +245,7 @@ const App = () => {
 
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Nacimiento:" {...config}>
+      <Form.Item name="date-picker" label="Fecha Nac:" {...config}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>
@@ -269,8 +264,6 @@ const App = () => {
       <Button type='primary'>Consultar</Button>
       <Col span={5}></Col>
   </Row>
-
-    
 
   <Row>
       <Col span={6}>
@@ -329,7 +322,7 @@ const App = () => {
       <Col span={5}><Button type="primary" danger>Salir</Button></Col>
   </Row>   
       
-
+{/*}
   <Row>
       <Col span={6}>
         <Form.Item label="Estado Civil">
@@ -349,10 +342,8 @@ const App = () => {
       </Col>
       <Col span={3}></Col>
     </Row>
-     
-
-  
-  <Row>
+    */}
+    <Row>
       <Col span={6}>
       <Form.Item
       name="calle"
@@ -375,8 +366,6 @@ const App = () => {
         </Form.Item>      
       </Col>
 
-      <Col span={6}>        </Col>
-      <Col span={6}>  <Row>
       <Col span={6}>
       <Form.Item
       name="localidad"
@@ -392,10 +381,10 @@ const App = () => {
       <Cascader options={residences} />
     </Form.Item>
       </Col>
-  </Row></Col>
+      <Col span={6}></Col>
   </Row>
-
-  <Row>
+  
+    <Row>
       <Col span={6}>
       <Form.Item
       name="celular"
@@ -410,12 +399,14 @@ const App = () => {
       <Input
         addonBefore={prefixSelector}
         style={{
-          width: '100%',
+          width: '175%',
         }}
       />
     </Form.Item>
+
+    
       </Col>
-      <Col span={6}><Form.Item
+      <Col span={12}><Form.Item
       name="fijo"
       label="Fijo"
       rules={[
@@ -432,8 +423,7 @@ const App = () => {
         }}
       />
     </Form.Item></Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
+    
   </Row>
     
 
@@ -470,11 +460,28 @@ const App = () => {
       </AutoComplete>
     </Form.Item>*/}
 
-    <Row>
-      <Col span={6}>
+  <Row>
+  <Col span={6}>
       <Form.Item
+       name="obra social"
+       label="Obra Social"
+      //tooltip="What do you want others to call you?"
+      rules={[
+        {
+          required: false,
+          message: 'Por favor ingresa tu Obra Social!',
+          whitespace: true,
+        },
+      ]}
+      >
+      <Input />
+      </Form.Item></Col>
+
+    
+    <Col span={12}>
+     <Form.Item
       name="email"
-      label="E-mail"
+      label="Correo E-mail"
       rules={[
         {
           type: 'email',
@@ -487,24 +494,10 @@ const App = () => {
       ]}
        >
       <Input />
-    </Form.Item>
-      </Col>
-      <Col span={6}><Form.Item
-      name="obra social"
-      label="Obra Social"
-      //tooltip="What do you want others to call you?"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor ingresa tu Obra Social!',
-          whitespace: true,
-        },
-      ]}
-      >
-      <Input />
       </Form.Item></Col>
+
       <Col span={6}></Col>
-      <Col span={6}></Col>
+      
   </Row>
 
 {/*
