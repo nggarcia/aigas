@@ -99,7 +99,7 @@ const config = {
     {
       type: 'object',
       required: true,
-      message: 'Please select time!',
+      message: ' Por favor seleccionar la fecha!',
     },
   ],
 };
@@ -343,98 +343,24 @@ const App = () => {
         <Form.Item label="Estado Civil">
           <Select
           placeholder= "Selecciona tu estado civil">
+            <Select.Option value="SOLTERO">Soltero</Select.Option>
             <Select.Option value="CASADO">Casado</Select.Option>
-            <Select.Option value="SOLTERO">Pasado</Select.Option>
             <Select.Option value="VIUDO">Viudo</Select.Option>
             <Select.Option value="EN CONVIVENCIA">En convivencia</Select.Option>
           </Select>
         </Form.Item></Col>
-      <Col span={6}>
-        <Form.Item label="Cónyugue">
+      <Col span={12}>
+        <Form.Item label="Nombre del Cónyuge">
           <Input />
         </Form.Item>
       </Col>
-
-      <Col span={3}></Col>
-      <Col span={6}>
+     
+      <Col span={6}></Col>
       
-      </Col>
-      <Col span={3}></Col>
     </Row>
     
     
-    {/*<Row>
-      <Col span={12}>
-      
-      </Col>
-      <Col span={12}>
-      
-      </Col>
-    </Row>*/}
-    
-    
-
-
-
-    {/*<Form.Item
-      name="password"
-      label="Password"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your password!',
-        },
-      ]}
-      hasFeedback
-    >
-      <Input.Password />
-    </Form.Item>*/}
-
-    {/*<Form.Item
-      name="confirm"
-      label="Confirm Password"
-      dependencies={['password']}
-      hasFeedback
-      rules={[
-        {
-          required: true,
-          message: 'Please confirm your password!',
-        },
-        ({ getFieldValue }) => ({
-          validator(_, value) {
-            if (!value || getFieldValue('password') === value) {
-              return Promise.resolve();
-            }
-
-            return Promise.reject(new Error('The two passwords that you entered do not match!'));
-          },
-        }),
-      ]}
-    >
-      <Input.Password />
-    </Form.Item>*/}
-
-   {/*} <Divider></Divider>*/}
- 
-  <Row>
-      <Col span={6}>
-      <Form.Item
-      name="localidad"
-      label="Localidad"
-      rules={[
-        {
-          type: 'array',
-          required: false,
-          message: 'Por favor ingresa tu localidad!',
-        },
-      ]}
-    >
-      <Cascader options={residences} />
-    </Form.Item>
-      </Col>
-  </Row>
-  
-  <Row>
+       <Row>
       <Col span={6}>
       <Form.Item
       name="calle"
@@ -457,11 +383,25 @@ const App = () => {
         </Form.Item>      
       </Col>
 
-      <Col span={6}></Col>
+      <Col span={6}>
+      <Form.Item
+      name="localidad"
+      label="Localidad"
+      rules={[
+        {
+          type: 'array',
+          required: false,
+          message: 'Por favor ingresa tu localidad!',
+        },
+      ]}
+    >
+      <Cascader options={residences} />
+    </Form.Item>
+      </Col>
       <Col span={6}></Col>
   </Row>
-
-  <Row>
+  
+    <Row>
       <Col span={6}>
       <Form.Item
       name="celular"
@@ -476,12 +416,14 @@ const App = () => {
       <Input
         addonBefore={prefixSelector}
         style={{
-          width: '100%',
+          width: '175%',
         }}
       />
     </Form.Item>
+
+    
       </Col>
-      <Col span={6}><Form.Item
+      <Col span={12}><Form.Item
       name="fijo"
       label="Fijo"
       rules={[
@@ -498,9 +440,58 @@ const App = () => {
         }}
       />
     </Form.Item></Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
+    
   </Row>
+    
+  <Row>
+  <Col span={6}>
+      <Form.Item
+       name="obra social"
+       label="Obra Social"
+      //tooltip="What do you want others to call you?"
+      rules={[
+        {
+          required: false,
+          message: 'Por favor ingresa tu Obra Social!',
+          whitespace: true,
+        },
+      ]}
+      >
+      <Input />
+      </Form.Item></Col>
+
+    
+    <Col span={12}>
+     <Form.Item
+      name="email"
+      label="Correo E-mail"
+      rules={[
+        {
+          type: 'email',
+          message: 'No es un E-mail válido!',
+        },
+        {
+          required: false,
+          message: 'Por favor ingresa tu E-mail!',
+        },
+      ]}
+       >
+      <Input />
+      </Form.Item></Col>
+
+      <Col span={6}></Col>
+      
+  </Row>
+
+
+
+
+
+
+
+
+
+
     
 
     {/*<Form.Item
@@ -536,42 +527,7 @@ const App = () => {
       </AutoComplete>
     </Form.Item>*/}
 
-    <Row>
-      <Col span={6}>
-      <Form.Item
-      name="email"
-      label="E-mail"
-      rules={[
-        {
-          type: 'email',
-          message: 'No es un E-mail válido!',
-        },
-        {
-          required: true,
-          message: 'Por favor ingresa tu E-mail!',
-        },
-      ]}
-       >
-      <Input />
-    </Form.Item>
-      </Col>
-      <Col span={6}><Form.Item
-      name="obra social"
-      label="Obra Social"
-      //tooltip="What do you want others to call you?"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor ingresa tu Obra Social!',
-          whitespace: true,
-        },
-      ]}
-      >
-      <Input />
-      </Form.Item></Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
-  </Row>
+    
 
 {/*
     <Row>
