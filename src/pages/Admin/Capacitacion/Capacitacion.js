@@ -8,7 +8,7 @@ import {
   //AutoComplete,
   Button,
   Cascader,
-  Checkbox,
+  //Checkbox,
   Col,
   Form,
   Input,
@@ -128,38 +128,7 @@ const App = () => {
     </Form.Item>
   );
 
-  //const onChange = (value) => {
- //   console.log('changed', value);
- // };
-  //const InputNumber= () => <InputNumber min={1} max={5} defaultValue={1} onChange={onChange} />;
 
-  /*const suffixSelector = (
-    <Form.Item name="suffix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="USD">$</Option>
-        <Option value="CNY">¥</Option>
-      </Select>
-    </Form.Item>
-      );*/
-  //const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-  //const onWebsiteChange = (value) => {
-    //if (!value) {
-    //  setAutoCompleteResult([]);
-   // } else {
-    //  setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-   // }
-  //};
-  //const websiteOptions = autoCompleteResult.map((website) => ({
-    //label: website,
-    //value: website,
-  //}
-  //)
-  //);
   return (
     <Form {...formItemLayout}
     form={form}
@@ -176,8 +145,9 @@ const App = () => {
 <h3>Carga de Capacitación:</h3>
 <br></br>
     <Row>
-     <Col span={6}>
-        <Form.Item name="tema"label="Tema"
+     <Col span={4}>
+        <Form.Item name="tema"label="Tema" 
+        
          rules={[
         {
           required: true,
@@ -190,13 +160,13 @@ const App = () => {
         </Form.Item>        
       </Col>
    
-      <Col span={2}>
+      <Col span={10}>
       <Button type="primary" icon={<SearchOutlined/>}htmlType="Buscar">
             Buscar
           </Button>
       </Col>
 
-     <Col span={6}></Col>
+     <Col span={2}></Col>
 
       <Col span={6}>
       <Form.Item label="Subir" valuePropName="fileList">
@@ -214,8 +184,8 @@ const App = () => {
     
     <Row>
      <Col span={6}>
-     <Form.Item name="date-picker" label="Fecha de Carga:" {...config}>
-        <DatePicker style={{width: "100%"}} locale={locale}/>
+     <Form.Item name="date-picker" label ="Fecha Carga:" {...config} style={{width: "160%"}}>
+        <DatePicker style={{width: "120%"}} locale={locale}/>
       </Form.Item>
      </Col>
         
@@ -232,8 +202,8 @@ const App = () => {
         <br></br>
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Fecha prevista:" {...config}>
-        <DatePicker style={{width: "100%"}} locale={locale}/>
+      <Form.Item name="date-picker" label="Fecha evento:" {...config } style={{width: "160%"}}>
+        <DatePicker style={{width: "120%"}} locale={locale}/>
       </Form.Item>
       </Col>
       <Col span={6}></Col>
@@ -278,7 +248,7 @@ const App = () => {
           ]}
         >
         
-        <Input.TextArea placeholder="" showCount maxLength={50} tex/>
+        <Input.TextArea placeholder="" showCount maxLength={100} tex/>
         </Form.Item>
       </Col>
       <Col span={6}></Col>
@@ -289,130 +259,50 @@ const App = () => {
     <Row>
       <Col span={6}>
       <Form.Item
-      name="calle"
-      label="Calle"
+      name="disertante"
+      label="Disertante"
       //tooltip="What do you want others to call you?"
       rules={[
         {
           required: false,
-          message: 'Por favor ingresa tu calle!',
+          message: 'Por favor ingresa el nombre!',
           whitespace: true,
         },
       ]}
     >
       <Input />
-    </Form.Item>
-      </Col>
-      <Col span={6}>
-      <Form.Item label="Número">
-          <Input />
-        </Form.Item>      
+      </Form.Item> 
       </Col>
 
-      <Col span={6}>
-      <Form.Item
-      name="localidad"
-      label="Localidad"
-      rules={[
-        {
-          type: 'array',
-          required: false,
-          message: 'Por favor ingresa tu localidad!',
-        },
-      ]}
-    >
-      <Cascader options={residences} />
-    </Form.Item>
-      </Col>
+      <Col span={6}></Col>
+      <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
   
     <Row>
       <Col span={6}>
-      <Form.Item
-      name="celular"
-      label="Celular"
-      rules={[
-        {
-          required: true,
-          message: 'Por favor ingresa tu número de celular!',
-        },
-      ]}
-    >
-      <Input
-        addonBefore={prefixSelector}
-        style={{
-          width: '175%',
-        }}
-      />
-    </Form.Item>
+      
 
     
       </Col>
-      <Col span={12}><Form.Item
-      name="fijo"
-      label="Fijo"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor ingresa tu número de teléfono fijo!',
-        },
-      ]}
-    >
-      <Input
-        addonBefore={prefixSelector}
-        style={{
-          width: '100%',
-        }}
-      />
-    </Form.Item></Col>
+      <Col span={12}>
+        
+    </Col>
     
   </Row>
     
 
-    {/*<Form.Item
-      name="donation"
-      label="Donation"
-      rules={[
-        {
-          required: true,
-          message: 'Please input donation amount!',
-        },
-      ]}
-    >
-      <InputNumber
-        addonAfter={suffixSelector}
-        style={{
-          width: '100%',
-        }}
-      />
-      </Form.Item>*/}
-
-    {/*<Form.Item
-      name="website"
-      label="Website"
-      rules={[
-        {
-          required: true,
-          message: 'Please input website!',
-        },
-      ]}
-    >
-      <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
-        <Input />
-      </AutoComplete>
-    </Form.Item>*/}
-
+    
   <Row>
   <Col span={6}>
       <Form.Item
-       name="obra social"
-       label="Obra Social"
+       name="costo"
+       label="Costo"
       //tooltip="What do you want others to call you?"
       rules={[
         {
           required: false,
-          message: 'Por favor ingresa tu Obra Social!',
+          message: 'Por favor ingresa el costo!',
           whitespace: true,
         },
       ]}
@@ -421,80 +311,13 @@ const App = () => {
       </Form.Item></Col>
 
     
-    <Col span={12}>
-     <Form.Item
-      name="email"
-      label="Correo E-mail"
-      rules={[
-        {
-          type: 'email',
-          message: 'No es un E-mail válido!',
-        },
-        {
-          required: true,
-          message: 'Por favor ingresa tu E-mail!',
-        },
-      ]}
-       >
-      <Input />
-      </Form.Item></Col>
-
+      <Col span={12}></Col>
       <Col span={6}></Col>
-      
-  </Row>
+      </Row>
 
-{/*
-    <Row>
-      <Col span={6}>
-      <Form.Item
-        name="profesión"
-        label="Profesión"
-      //tooltip="What do you want others to call you?"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor ingresa tu profesión!',
-          whitespace: true,
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
 
-      </Col>
-      <Col span={6}>
-      <Form.Item
-      name="obra social"
-      label="Obra Social"
-      //tooltip="What do you want others to call you?"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor ingresa tu Obra Social!',
-          whitespace: true,
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
 
-    
-      </Col>
-      <Col span={6}></Col>
-      <Col span={6}></Col>
-  </Row>
-    */}
 
-{/*
-    <Row>
-     <Col span={6}>
-      <Col span={24}>
-          {/*       
-              
-        </Col>
-      </Col>         
-    </Row>
-    */}
 
     </Form>
 );
