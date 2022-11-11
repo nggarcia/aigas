@@ -58,6 +58,12 @@ export default function MenuSider (props) {
             <span className="nav-text">Reportes</span>
           </Link>
         </Menu.Item>
+        <Menu.Item key="/admin/capacitacion">
+          <Link to={"/admin/capacitacion"}>
+            <LineChartOutlined />
+            <span className="nav-text">Cargar Capacitacion</span>
+          </Link>
+        </Menu.Item>
       </Menu>
     </Sider>
   );

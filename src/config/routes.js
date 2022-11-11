@@ -10,6 +10,7 @@ import AdminMatriculados from "../pages/Admin/Matriculados";
 import AdminMedidores from "../pages/Admin/Medidores";
 import AdminTramites from "../pages/Admin/Tramites";
 import AdminReportes from "../pages/Admin/Reportes";
+import AdminCapacitacion from "../pages/Admin/Capacitacion";
 import AdminIniciosesion from "../pages/Admin/Iniciosesion";
 
 
@@ -69,6 +70,11 @@ const routesAdmin = [
     component: AdminReportes,
   },
    
+  {
+    path: "/admin/capacitacion",
+    layout: LayoutAdmin,
+    component: AdminCapacitacion,
+  },
   {
     path: "*",
     layout: LayoutAdmin,

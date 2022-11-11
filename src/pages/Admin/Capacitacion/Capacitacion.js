@@ -1,5 +1,5 @@
 import React from "react";
-import "./Empleados.scss";
+import "./Capacitacion.scss";
 
 import 'moment/locale/es';
 import locale from "antd/lib/date-picker/locale/es_ES";
@@ -171,15 +171,17 @@ const App = () => {
     }}
     scrollToFirstError
   >
-<Divider orientation="left">Gestión de Empleados:</Divider>
+
+<br></br>
+<h3>Carga de Capacitación:</h3>
 <br></br>
     <Row>
      <Col span={6}>
-        <Form.Item name="legajo"label="Legajo"
+        <Form.Item name="tema"label="Tema"
          rules={[
         {
           required: true,
-          message: 'Por favor ingresa tu legajo!',
+          message: 'Por favor ingresar tema buscado!',
           whitespace: true,
         },
         ]}
@@ -212,69 +214,44 @@ const App = () => {
     
     <Row>
      <Col span={6}>
-        <Form.Item label="Tipo Doc">
-          <Select 
-          placeholder="Selecciona un tipo documento" defaultValue="DNI">
-            <Select.Option value="DNI">DNI</Select.Option>
-            <Select.Option value="PASAPORTE">PASAPORTE</Select.Option>
-            <Select.Option value="CEDULA">CEDULA</Select.Option>
-          </Select>
-        </Form.Item></Col>
-
-      <Col span={6}>
-      <Form.Item name="nrodocumento"label="Nro Doc"
-      rules={[
-        {
-          required: true,
-          message: 'Por favor ingresa tu nro documento!',
-          whitespace: true,
-        },
-      ]}
-      >
-          <Input />
-        </Form.Item>        
-      </Col>
+     <Form.Item name="date-picker" label="Fecha de Carga:" {...config}>
+        <DatePicker style={{width: "100%"}} locale={locale}/>
+      </Form.Item>
+     </Col>
+        
       <Col span={6}></Col>
-      <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit">
-                Registrar 
-            </Button>
-          </Form.Item>
+             
+      
+      <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
 
+  <Divider></Divider>
+        <br></br>
+        <h3>Datos de Capacitación:</h3>
+        <br></br>
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Fecha Nac:" {...config}>
+      <Form.Item name="date-picker" label="Fecha prevista:" {...config}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>
-      <Col span={6}>
-      <Form.Item
-      name="En Actividad"
-      valuePropName="checked"      
-      {...tailFormItemLayout}
-    >
-      <Checkbox>
-        En Actividad
-      </Checkbox>
-    </Form.Item>
-      </Col>
+      <Col span={6}></Col>
       <Col span={7}></Col>
-      <Button type='primary'>Consultar</Button>
+      <Button type='primary'>Cargar</Button>
       <Col span={5}></Col>
   </Row>
 
   <Row>
       <Col span={6}>
       <Form.Item
-      name="name"
-      label="Nombre"
+      name="titulo"
+      label="Título:"
       //tooltip="What do you want others to call you?"
       rules={[
         {
           required: true,
-          message: 'Por favor ingresa tu nombre!',
+          message: 'Por favor ingresa el título o tema!',
           whitespace: true,
         },
       ]}
@@ -283,66 +260,32 @@ const App = () => {
     </Form.Item>
 
       </Col>
-      <Col span={6}>
-      <Form.Item
-      name="apellido"
-      label="Apellido"
-      //tooltip="What do you want others to call you?"
-      rules={[
-        {
-          required: true,
-          message: 'Por favor ingresa tu apellido!',
-          whitespace: true,
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
-      </Col>
+      <Col span={6}></Col>
       <Col span={7}></Col>
       <Col span={5}><Button type='primary'>Eliminar</Button></Col>
   </Row>
 
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Ingreso:" {...config}>
-        <DatePicker style={{width: "100%"}} locale={locale}/>
-      </Form.Item>
+      <Form.Item
+          name="descripcion"
+          label="Descripcion"
+          rules={[
+            {
+              required: false,
+              message: 'Por favor ingrese una descripción de la capacitación',
+            },
+          ]}
+        >
+        
+        <Input.TextArea placeholder="" showCount maxLength={50} tex/>
+        </Form.Item>
       </Col>
-      <Col span={6}>
-         <Form.Item label="Cargo">
-          <Select 
-          placeholder= "Selecciona un cargo">
-            <Select.Option value="uno">Administrativo</Select.Option>
-            <Select.Option value="dos">Miembro de Comision Directiva</Select.Option>
-            <Select.Option value="tres">Contador</Select.Option>
-          </Select>
-        </Form.Item></Col>
+      <Col span={6}></Col>
       <Col span={7}></Col>
       <Col span={5}><Button type="primary" danger>Salir</Button></Col>
   </Row>   
       
-{/*}
-  <Row>
-      <Col span={6}>
-        <Form.Item label="Estado Civil">
-          <Select
-          placeholder= "Selecciona tu estado civil">
-            <Select.Option value="CASADO">Casado</Select.Option>
-            <Select.Option value="SOLTERO">Pasado</Select.Option>
-            <Select.Option value="VIUDO">Viudo</Select.Option>
-            <Select.Option value="EN CONVIVENCIA">En convivencia</Select.Option>
-          </Select>
-        </Form.Item></Col>
-      <Col span={6}></Col>
-
-      <Col span={3}></Col>
-      <Col span={6}>
-      
-      </Col>
-      <Col span={3}></Col>
-    </Row>
-    */}
     <Row>
       <Col span={6}>
       <Form.Item
@@ -546,28 +489,7 @@ const App = () => {
     <Row>
      <Col span={6}>
       <Col span={24}>
-          {/*<Form.Item
-          name="artículo 6"
-          label="Artículo 6"
-          rules={[
-            {
-              required: false,
-              message: 'Please input Intro',
-            },
-          ]}
-        >
-        
-        <Input.TextArea placeholder="Los asociados Activos tienen las siguientes obligaciones y derechos:
-          1. a) Abonar puntualmente las cuotas sociales y otras contribuciones que se establezcan,
-          2. b) Cumplir las demás obligaciones que imponga este estatuto, reglamentos y las resoluciones emanadas de la Asamblea y de la Comisión
-          Directiva,
-          3. c) Participar con voz y voto en las Asambleas, debiendo para ello estar al día con respecto al pago de las cuotas y contribuciones que se abonan
-          como asociado,
-          4. d) Presentar proyectos por escrito,
-          5. e) Ser elegido para integrar órganos sociales,
-          6. f) Gozar de los bene cios que otorga la entidad." showCount maxLength={100} tex/>
-        </Form.Item>
-        
+          {/*       
               
         </Col>
       </Col>         
@@ -578,189 +500,3 @@ const App = () => {
 );
 };
 export default App;
-
-
-
-
-
-{/*
-import { PlusOutlined } from '@ant-design/icons';
-import {
-  Form,
-  Input,
-  Button,
-  //Radio,
-  Select,
-  Cascader,
-  DatePicker,
-  InputNumber,
-  TreeSelect,
-  Switch,
-  Checkbox,
-  Upload,
-} from 'antd';
-
-//export default function Empleados () {
-  const { RangePicker } = DatePicker;
-
-//const { TextArea } = Input;
-const FormDisabledDemo = () => {
-  const [componentDisabled, setComponentDisabled] = useState(true);
-
-  const onFormLayoutChange = ({ disabled }) => {
-    setComponentDisabled(disabled);
-  };
-
-  return (
-    <>
-    
-{/*<div>
-      //<h1>Datos de Empleado</h1>
-    //</div>*/}
-    
- {/*   
-<Checkbox
-      checked={componentDisabled}
-      onChange={(e) => setComponentDisabled(e.target.checked)}
-    >
-      Habilitado
-    </Checkbox>
-    
-
-    <Form
-      labelCol={{
-        span: 0,
-      }}
-      wrapperCol={{
-        span: 14,
-      }}
-      layout="horizontal"
-      onValuesChange={onFormLayoutChange}
-      disabled={componentDisabled}
-    >
-
-      
-      {/*
-      <Form.Item label="Chekbox" name="disabled" valuePropName="checked">
-        <Checkbox>Checkbox</Checkbox>
-      </Form.Item>
-       */}
-
-       {/*
-      <Form.Item label="Radio">
-        <Radio.Group>
-          <Radio value="apple"> Apple </Radio>
-          <Radio value="pear"> Pear </Radio>
-        </Radio.Group>
-            </Form.Item>
-            */}
-    {/*
-    <fieldset>
-	<legend>Datos Empleado:</legend>
-<Form.Item label="Tipo Doc">
-        <Select>
-          <Select.Option value="DNI">DNI</Select.Option>
-          <Select.Option value="PASAPORTE">PASAPORTE</Select.Option>
-          <Select.Option value="PASAPORTE">CEDULA</Select.Option>
-        </Select>
-      </Form.Item>
-      <Form.Item label="Nro Doc">
-        <Input />
-
-      </Form.Item>
-      <Form.Item
-        wrapperCol={{
-          offset: 0,
-          span: 16,
-        }}
-      >
-        <Button type="primary" htmlType="submit">
-          Buscar
-        </Button>
-        </Form.Item>
-    </fieldset>
-               
-
-          <Form.Item label="Nombre">
-        <Input />
-      </Form.Item>
-           
-      <Form.Item label="Apellido">
-        <Input />
-      </Form.Item>
-    
-          
-      <Form.Item label="TreeSelect">
-        <TreeSelect
-          treeData={[
-            {
-              title: 'Light',
-              value: 'light',
-              children: [
-                {
-                  title: 'Bamboo',
-                  value: 'bamboo',
-                },
-              ],
-            },
-          ]}
-        />
-      </Form.Item>
-      <Form.Item label="Cascader">
-        <Cascader
-          options={[
-            {
-              value: 'zhejiang',
-              label: 'Zhejiang',
-              children: [
-                {
-                  value: 'hangzhou',
-                  label: 'Hangzhou',
-                },
-              ],
-            },
-          ]}
-        />
-      </Form.Item>
-      <Form.Item label="DatePicker">
-        <DatePicker />
-      </Form.Item>
-      <Form.Item label="RangePicker">
-        <RangePicker />
-      </Form.Item>
-      <Form.Item label="InputNumber">
-        <InputNumber />
-      </Form.Item>
-
-      {/*<Form.Item label="TextArea">
-        <TextArea rows={4} />
-        </Form.Item>*/}
-{/*
-      <Form.Item label="Switch" valuePropName="checked">
-        <Switch />
-      </Form.Item>
-      <Form.Item label="Upload" valuePropName="fileList">
-        <Upload action="/upload.do" listType="picture-card">
-          <div>
-            <PlusOutlined />
-            <div
-              style={{
-                marginTop: 8,
-              }}
-            >
-              Upload
-            </div>
-          </div>
-        </Upload>
-      </Form.Item>
-      <Form.Item label="Button">
-        <Button>Button</Button>
-      </Form.Item>
-    </Form>
-  </>
-  )
-};
-
-export default () => <FormDisabledDemo/>;
-
-*/}
