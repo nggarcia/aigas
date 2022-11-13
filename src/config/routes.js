@@ -11,6 +11,8 @@ import AdminMedidores from "../pages/Admin/Medidores";
 import AdminTramites from "../pages/Admin/Tramites";
 import AdminReportes from "../pages/Admin/Reportes";
 import AdminCapacitacion from "../pages/Admin/Capacitacion";
+import AdminEventos from "../pages/Admin/Eventos";
+import AdminRecorridos from "../pages/Admin/Recorridos";
 import AdminIniciosesion from "../pages/Admin/Iniciosesion";
 
 
@@ -69,12 +71,21 @@ const routesAdmin = [
     layout: LayoutAdmin,
     component: AdminReportes,
   },
-   
   {
     path: "/admin/capacitacion",
     layout: LayoutAdmin,
     component: AdminCapacitacion,
   },
+  {
+    path: "/admin/eventos",
+    layout: LayoutAdmin,
+    component: AdminEventos,
+  },
+  {
+    path: "/admin/recorridos",
+    layout: LayoutAdmin,
+    component: AdminRecorridos,
+  },  
   {
     path: "*",
     layout: LayoutAdmin,
