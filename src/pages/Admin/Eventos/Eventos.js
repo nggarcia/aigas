@@ -148,8 +148,8 @@ const App = () => {
 <h3>Carga de Eventos Sociales:</h3>
 <br></br>
     <Row>
-     <Col span={4}>
-        <Form.Item name="tema"label="Tema" 
+     <Col span={6}>
+        <Form.Item name="tema"  style={{width:"160%"}}label="Tema"
         
          rules={[
         {
@@ -160,19 +160,15 @@ const App = () => {
         ]}
        >         
         <Input/>
-        </Form.Item>        
-      </Col>
-   
-      <Col span={10}>
-      <Button type="primary" icon={<SearchOutlined/>}htmlType="Buscar">
+      </Form.Item></Col>
+      <Col span={2}>
+      <Button type="primary" style={{width:"180%"}}  icon={<SearchOutlined/>}htmlType="Buscar">
             Buscar
           </Button>
-      </Col>
-
-     <Col span={2}></Col>
-
-      <Col span={6}>
-
+       </Col>
+     <Col span={10}></Col>
+     <Col span={6}>
+ 
       {/*<Form.Item label="Subir" valuePropName="fileList">
 
           <Upload action="/upload.do" listType="picture-card">
@@ -183,8 +179,6 @@ const App = () => {
           </Upload>
         </Form.Item>
       */}
-
-
       </Col>
       <Col span={2}></Col>
    </Row>
@@ -192,7 +186,7 @@ const App = () => {
     <Row>
      <Col span={6}>
      <Form.Item name="date-picker" label ="Fecha Carga:" {...config} style={{width: "160%"}}>
-        <DatePicker style={{width: "120%"}} locale={locale}/>
+        <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
@@ -206,7 +200,7 @@ const App = () => {
   <Row>
       <Col span={6}>
       <Form.Item name="date-picker" label="Fecha evento:" {...config } style={{width: "160%"}}>
-        <DatePicker style={{width: "120%"}} locale={locale}/>
+        <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>
       <Col span={6}></Col>
@@ -219,10 +213,10 @@ const App = () => {
       <Col span={6}>
       <Form.Item
       name="titulo"
-      label="Título:"
+      label="Título:" style={{width: "160%"}}
       rules={[
         {
-          required: true,
+          required: false,
           message: 'Por favor ingresa el título o tema!',
           whitespace: true,
         },
@@ -239,7 +233,7 @@ const App = () => {
       <Col span={6}>
       <Form.Item
           name="descripcion"
-          label="Descripcion"
+          label="Descripcion" style={{width: "160%"}}
           rules={[
             {
               required: false,
@@ -259,7 +253,7 @@ const App = () => {
       <Col span={6}>
       <Form.Item
       name="organiza"
-      label="Organiza"
+      label="Organiza" style={{width: "160%"}}
       //tooltip="What do you want others to call you?"
       rules={[
         {
@@ -287,7 +281,7 @@ const App = () => {
   <Col span={6}>
       <Form.Item
        name="costo"
-       label="Costo"
+       label="Costo" style={{width: "160%"}}
       //tooltip="What do you want others to call you?"
       rules={[
         {
