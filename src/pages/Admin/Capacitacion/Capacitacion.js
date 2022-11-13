@@ -7,7 +7,7 @@ import locale from "antd/lib/date-picker/locale/es_ES";
 import {
   //AutoComplete,
   Button,
-  Cascader,
+  Image,
   //Checkbox,
   Col,
   Form,
@@ -16,7 +16,7 @@ import {
   DatePicker,
   Divider,
   Select,
-  Upload,
+  //Upload,
  } from 'antd';
 import { DisconnectOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { findAllByDisplayValue } from "@testing-library/react";
@@ -128,8 +128,11 @@ const App = () => {
     </Form.Item>
   );
 
+    
+  
 
-  return (
+
+  return ( 
     <Form {...formItemLayout}
     form={form}
     name="register"
@@ -140,7 +143,7 @@ const App = () => {
     }}
     scrollToFirstError
   >
-
+    
 <br></br>
 <h3>Carga de Capacitación:</h3>
 <br></br>
@@ -169,15 +172,19 @@ const App = () => {
      <Col span={2}></Col>
 
       <Col span={6}>
-      <Form.Item label="Subir" valuePropName="fileList">
+
+      {/*<Form.Item label="Subir" valuePropName="fileList">
 
           <Upload action="/upload.do" listType="picture-card">
             <div>
               <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
+              <div style={{ marginTop: 12 }}>Upload</div>
             </div>
           </Upload>
         </Form.Item>
+      */}
+
+
       </Col>
       <Col span={2}></Col>
    </Row>
@@ -186,12 +193,8 @@ const App = () => {
      <Col span={6}>
      <Form.Item name="date-picker" label ="Fecha Carga:" {...config} style={{width: "160%"}}>
         <DatePicker style={{width: "120%"}} locale={locale}/>
-      </Form.Item>
-     </Col>
-        
+      </Form.Item></Col>
       <Col span={6}></Col>
-             
-      
       <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
@@ -217,7 +220,6 @@ const App = () => {
       <Form.Item
       name="titulo"
       label="Título:"
-      //tooltip="What do you want others to call you?"
       rules={[
         {
           required: true,
@@ -227,9 +229,7 @@ const App = () => {
       ]}
     >
       <Input />
-    </Form.Item>
-
-      </Col>
+    </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={7}></Col>
       <Col span={5}><Button type='primary'>Eliminar</Button></Col>
@@ -243,11 +243,10 @@ const App = () => {
           rules={[
             {
               required: false,
-              message: 'Por favor ingrese una descripción de la capacitación',
+              message: 'Por favor ingrese una descripción de la disertación',
             },
           ]}
         >
-        
         <Input.TextArea placeholder="" showCount maxLength={100} tex/>
         </Form.Item>
       </Col>
@@ -271,24 +270,15 @@ const App = () => {
       ]}
     >
       <Input />
-      </Form.Item> 
-      </Col>
-
+      </Form.Item> </Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
   
     <Row>
-      <Col span={6}>
-      
-
-    
-      </Col>
-      <Col span={12}>
-        
-    </Col>
-    
+      <Col span={6}></Col>
+      <Col span={12}></Col>    
   </Row>
     
 
@@ -308,17 +298,10 @@ const App = () => {
       ]}
       >
       <Input />
-      </Form.Item></Col>
-
-    
+      </Form.Item></Col>    
       <Col span={12}></Col>
       <Col span={6}></Col>
       </Row>
-
-
-
-
-
     </Form>
 );
 };
