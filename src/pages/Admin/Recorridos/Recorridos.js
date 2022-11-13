@@ -186,7 +186,7 @@ const App = () => {
           ]}
         >
         
-        <Input.TextArea placeholder="" showCount maxLength={50} tex/>
+        <Input.TextArea placeholder="" showCount maxLength={100} tex/>
       </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={7}></Col>
