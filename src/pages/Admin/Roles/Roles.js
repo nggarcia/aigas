@@ -5,7 +5,8 @@ import 'moment/locale/es';
 import locale from "antd/lib/date-picker/locale/es_ES";
 
 import {
-  //AutoComplete, Checkbox, Upload,
+  //AutoComplete, Upload,
+  Checkbox,
   Button,
   Col,
   Form,
@@ -201,8 +202,66 @@ const App = () => {
       <Col span={6}></Col>
       <Col span={7}></Col>
       <Col span={5}><Button type="primary" danger>Salir</Button></Col>
-  </Row>   
-      
+  </Row> 
+  
+  <Divider orientation="left"></Divider>
+  <br></br>
+  <h3>Permisos del Rol:</h3>
+  <br></br>
+
+  <Row>
+    <Col span={6}>
+    <Checkbox value="A">Matriculados</Checkbox>
+    </Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    </Row>
+
+    <Row>
+    <Col span={6}>
+    <Checkbox value="B">Medidores</Checkbox>
+    </Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    </Row>
+
+    <Row>
+    <Col span={6}>
+    <Checkbox value="C">Empleados</Checkbox>
+    </Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    </Row>
+
+    <Row>
+    <Col span={6}>
+    <Checkbox value="D">Cuentas Contrato</Checkbox>
+    </Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    </Row>
+
+    <Row>
+    <Col span={6}>
+    <Checkbox value="E">Reportes</Checkbox>
+    </Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    </Row>
+
+    <Row>
+    <Col span={6}>
+    <Checkbox value="G">Cargas</Checkbox>
+    </Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    <Col span={6}></Col>
+    </Row>       
       
     </Form>
 );
