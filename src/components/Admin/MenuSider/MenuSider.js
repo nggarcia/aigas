@@ -76,6 +76,12 @@ export default function MenuSider (props) {
             <span className="nav-text">Cargar Recorridos</span>
           </Link>
         </Menu.Item>
+        <Menu.Item key="/admin/roles">
+          <Link to={"/admin/roles"}>
+            <LineChartOutlined />
+            <span className="nav-text">Cargar Roles</span>
+          </Link>
+        </Menu.Item>
       </Menu>
     </Sider>
   );

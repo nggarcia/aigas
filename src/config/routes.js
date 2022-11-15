@@ -13,6 +13,7 @@ import AdminReportes from "../pages/Admin/Reportes";
 import AdminCapacitacion from "../pages/Admin/Capacitacion";
 import AdminEventos from "../pages/Admin/Eventos";
 import AdminRecorridos from "../pages/Admin/Recorridos";
+import AdminRoles from "../pages/Admin/Roles";
 import AdminIniciosesion from "../pages/Admin/Iniciosesion";
 
 
@@ -85,6 +86,11 @@ const routesAdmin = [
     path: "/admin/recorridos",
     layout: LayoutAdmin,
     component: AdminRecorridos,
+  },
+  {
+    path: "/admin/roles",
+    layout: LayoutAdmin,
+    component: AdminRoles,
   },  
   {
     path: "*",
