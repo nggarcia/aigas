@@ -5,10 +5,7 @@ import 'moment/locale/es';
 import locale from "antd/lib/date-picker/locale/es_ES";
 
 import {
-  //AutoComplete,
   Button,
-  Cascader,
-  //Checkbox,
   Col,
   Form,
   Input,
@@ -16,58 +13,12 @@ import {
   DatePicker,
   Divider,
   Select,
-  Upload,
+  //Upload,
  } from 'antd';
 import { DisconnectOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { findAllByDisplayValue } from "@testing-library/react";
 const { Option } = Select;
-const residences = [
-  {
-    value: 'cordoba',
-    label: 'Cordoba',
-    children: [
-      {
-        value: 'capital',
-        label: 'Capital',
-        children: [
-          {
-            value: 'alberdi',
-            label: 'Alberdi',
-          },
-          {
-            value: 'nuevacordoba',
-            label: 'Nueva Córdoba',
-          },
-          {
-            value: 'jardín',
-            label: 'Jardín',
-          },
-        ],
-      },
-      {
-        value: 'interior',
-        label: 'Interior',
-        children: [
-          {
-            value: 'villacarlospaz',
-            label: 'Villa Carlos Paz',
-          },
-          { 
-            value: 'villaallende',
-            label: 'Villa Allende',
-          },
-          { 
-            value: 'unquillo',
-            label: 'Unquillo',
-          },
-              
-        ],
-      },
 
-
-    ],
-  },
-];
 
 const formItemLayout = {
   labelCol: {
@@ -114,43 +65,24 @@ const App = () => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 90,
-        }}
-      >
-        <Option value="351">+351</Option>
-        <Option value="353">+353</Option>
-        <Option value="358">+358</Option>
-      </Select>
-    </Form.Item>
-  );
 
-
-  return (
+  return ( 
     <Form {...formItemLayout}
     form={form}
     name="register"
     onFinish={onFinish}
-    initialValues={{
-      residence: ['zhejiang', 'hangzhou', 'xihu'],
-      prefix: '351',
-    }}
     scrollToFirstError
   >
-
+    
 <br></br>
 <h3>Carga de Capacitación:</h3>
 <br></br>
     <Row>
-     <Col span={4}>
-        <Form.Item name="tema"label="Tema" 
-        
+     <Col span={6}>
+        <Form.Item name="tema"label="Tema" style={{width: "160%"}}
          rules={[
         {
-          required: true,
+          required: false,
           message: 'Por favor ingresar tema buscado!',
           whitespace: true,
         },
@@ -160,24 +92,27 @@ const App = () => {
         </Form.Item>        
       </Col>
    
-      <Col span={10}>
-      <Button type="primary" icon={<SearchOutlined/>}htmlType="Buscar">
+      <Col span={2}>
+      <Button type="primary" style={{width: "180%"}} icon={<SearchOutlined/>}htmlType="Buscar">
             Buscar
           </Button>
       </Col>
 
-     <Col span={2}></Col>
-
+     <Col span={6}></Col>
       <Col span={6}>
-      <Form.Item label="Subir" valuePropName="fileList">
+
+      {/*<Form.Item label="Subir" valuePropName="fileList">
 
           <Upload action="/upload.do" listType="picture-card">
             <div>
               <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
+              <div style={{ marginTop: 12 }}>Upload</div>
             </div>
           </Upload>
         </Form.Item>
+      */}
+
+
       </Col>
       <Col span={2}></Col>
    </Row>
@@ -185,13 +120,9 @@ const App = () => {
     <Row>
      <Col span={6}>
      <Form.Item name="date-picker" label ="Fecha Carga:" {...config} style={{width: "160%"}}>
-        <DatePicker style={{width: "120%"}} locale={locale}/>
-      </Form.Item>
-     </Col>
-        
+        <DatePicker style={{width: "100%"}} locale={locale}/>
+      </Form.Item></Col>
       <Col span={6}></Col>
-             
-      
       <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
@@ -203,7 +134,7 @@ const App = () => {
   <Row>
       <Col span={6}>
       <Form.Item name="date-picker" label="Fecha evento:" {...config } style={{width: "160%"}}>
-        <DatePicker style={{width: "120%"}} locale={locale}/>
+        <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>
       <Col span={6}></Col>
@@ -216,8 +147,7 @@ const App = () => {
       <Col span={6}>
       <Form.Item
       name="titulo"
-      label="Título:"
-      //tooltip="What do you want others to call you?"
+      label="Título:" style={{width: "160%"}}
       rules={[
         {
           required: true,
@@ -227,9 +157,7 @@ const App = () => {
       ]}
     >
       <Input />
-    </Form.Item>
-
-      </Col>
+    </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={7}></Col>
       <Col span={5}><Button type='primary'>Eliminar</Button></Col>
@@ -239,15 +167,14 @@ const App = () => {
       <Col span={6}>
       <Form.Item
           name="descripcion"
-          label="Descripcion"
+          label="Descripcion" style={{width: "160%"}}
           rules={[
             {
               required: false,
-              message: 'Por favor ingrese una descripción de la capacitación',
+              message: 'Por favor ingrese una descripción de la disertación',
             },
           ]}
         >
-        
         <Input.TextArea placeholder="" showCount maxLength={100} tex/>
         </Form.Item>
       </Col>
@@ -260,7 +187,7 @@ const App = () => {
       <Col span={6}>
       <Form.Item
       name="disertante"
-      label="Disertante"
+      label="Disertante" style={{width: "160%"}}
       //tooltip="What do you want others to call you?"
       rules={[
         {
@@ -271,24 +198,15 @@ const App = () => {
       ]}
     >
       <Input />
-      </Form.Item> 
-      </Col>
-
+      </Form.Item> </Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
   
     <Row>
-      <Col span={6}>
-      
-
-    
-      </Col>
-      <Col span={12}>
-        
-    </Col>
-    
+      <Col span={6}></Col>
+      <Col span={12}></Col>    
   </Row>
     
 
@@ -297,9 +215,8 @@ const App = () => {
   <Col span={6}>
       <Form.Item
        name="costo"
-       label="Costo"
-      //tooltip="What do you want others to call you?"
-      rules={[
+       label="Costo" style={{width: "160%"}}
+       rules={[
         {
           required: false,
           message: 'Por favor ingresa el costo!',
@@ -308,17 +225,10 @@ const App = () => {
       ]}
       >
       <Input />
-      </Form.Item></Col>
-
-    
+      </Form.Item></Col>    
       <Col span={12}></Col>
       <Col span={6}></Col>
       </Row>
-
-
-
-
-
     </Form>
 );
 };

@@ -5,9 +5,10 @@ import 'moment/locale/es';
 import locale from "antd/lib/date-picker/locale/es_ES";
 
 import {
-  //AutoComplete, Checkbox,
+  //AutoComplete,
   Button,
-  Cascader,
+  Image,
+  //Checkbox,
   Col,
   Form,
   Input,
@@ -15,7 +16,7 @@ import {
   DatePicker,
   Divider,
   Select,
-  Upload,
+  //Upload,
  } from 'antd';
 import { DisconnectOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { findAllByDisplayValue } from "@testing-library/react";
@@ -127,8 +128,11 @@ const App = () => {
     </Form.Item>
   );
 
+    
+  
 
-  return (
+
+  return ( 
     <Form {...formItemLayout}
     form={form}
     name="register"
@@ -139,13 +143,14 @@ const App = () => {
     }}
     scrollToFirstError
   >
-
+    
 <br></br>
-<h3>Carga de Evento Social:</h3>
+<h3>Carga de Eventos Sociales:</h3>
 <br></br>
     <Row>
      <Col span={6}>
-        <Form.Item name="tema"label="Tema"
+        <Form.Item name="tema"  style={{width:"160%"}}label="Tema"
+        
          rules={[
         {
           required: true,
@@ -155,41 +160,35 @@ const App = () => {
         ]}
        >         
         <Input/>
-        </Form.Item>        
-      </Col>
-   
+      </Form.Item></Col>
       <Col span={2}>
-      <Button type="primary" icon={<SearchOutlined/>}htmlType="Buscar">
+      <Button type="primary" style={{width:"180%"}}  icon={<SearchOutlined/>}htmlType="Buscar">
             Buscar
           </Button>
-      </Col>
-
-     <Col span={6}></Col>
-
-      <Col span={6}>
-      <Form.Item label="Subir" valuePropName="fileList">
+       </Col>
+     <Col span={10}></Col>
+     <Col span={6}>
+ 
+      {/*<Form.Item label="Subir" valuePropName="fileList">
 
           <Upload action="/upload.do" listType="picture-card">
             <div>
               <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
+              <div style={{ marginTop: 12 }}>Upload</div>
             </div>
           </Upload>
         </Form.Item>
+      */}
       </Col>
       <Col span={2}></Col>
    </Row>
     
     <Row>
      <Col span={6}>
-     <Form.Item name="date-picker" label="Fecha de Carga:" {...config}>
+     <Form.Item name="date-picker" label ="Fecha Carga:" {...config} style={{width: "160%"}}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
-      </Form.Item>
-     </Col>
-        
+      </Form.Item></Col>
       <Col span={6}></Col>
-             
-      
       <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
@@ -200,7 +199,7 @@ const App = () => {
         <br></br>
   <Row>
       <Col span={6}>
-      <Form.Item name="date-picker" label="Fecha prevista:" {...config}>
+      <Form.Item name="date-picker" label="Fecha evento:" {...config } style={{width: "160%"}}>
         <DatePicker style={{width: "100%"}} locale={locale}/>
       </Form.Item>
       </Col>
@@ -214,20 +213,17 @@ const App = () => {
       <Col span={6}>
       <Form.Item
       name="titulo"
-      label="Título:"
-      //tooltip="What do you want others to call you?"
+      label="Título:" style={{width: "160%"}}
       rules={[
         {
-          required: true,
+          required: false,
           message: 'Por favor ingresa el título o tema!',
           whitespace: true,
         },
       ]}
     >
       <Input />
-    </Form.Item>
-
-      </Col>
+    </Form.Item></Col>
       <Col span={6}></Col>
       <Col span={7}></Col>
       <Col span={5}><Button type='primary'>Eliminar</Button></Col>
@@ -237,16 +233,15 @@ const App = () => {
       <Col span={6}>
       <Form.Item
           name="descripcion"
-          label="Descripcion"
+          label="Descripcion" style={{width: "160%"}}
           rules={[
             {
               required: false,
-              message: 'Por favor ingrese una descripción del evento social',
+              message: 'Por favor ingrese una descripción de la capacitación',
             },
           ]}
         >
-        
-        <Input.TextArea placeholder="" showCount maxLength={50} tex/>
+        <Input.TextArea placeholder="" showCount maxLength={100} tex/>
         </Form.Item>
       </Col>
       <Col span={6}></Col>
@@ -257,129 +252,50 @@ const App = () => {
     <Row>
       <Col span={6}>
       <Form.Item
-      name="calle"
-      label="Calle"
+      name="organiza"
+      label="Organiza" style={{width: "160%"}}
       //tooltip="What do you want others to call you?"
       rules={[
         {
           required: false,
-          message: 'Por favor ingresa tu calle!',
+          message: 'Por favor ingresa el nombre!',
           whitespace: true,
         },
       ]}
     >
       <Input />
-    </Form.Item>
-      </Col>
-      <Col span={6}>
-      <Form.Item label="Número">
-          <Input />
-        </Form.Item>      
-      </Col>
-
-      <Col span={6}>
-      <Form.Item
-      name="localidad"
-      label="Localidad"
-      rules={[
-        {
-          type: 'array',
-          required: false,
-          message: 'Por favor ingresa tu localidad!',
-        },
-      ]}
-    >
-      <Cascader options={residences} />
-    </Form.Item>
-      </Col>
+      </Form.Item> </Col>
+      <Col span={6}></Col>
+      <Col span={6}></Col>
       <Col span={6}></Col>
   </Row>
   
     <Row>
-      <Col span={6}>
-      <Form.Item
-      name="celular"
-      label="Celular"
-      rules={[
-        {
-          required: true,
-          message: 'Por favor ingresa tu número de celular!',
-        },
-      ]}
-    >
-      <Input
-        addonBefore={prefixSelector}
-        style={{
-          width: '175%',
-        }}
-      />
-    </Form.Item>
-
-    
-      </Col>
-      <Col span={12}><Form.Item
-      name="fijo"
-      label="Fijo"
-      rules={[
-        {
-          required: false,
-          message: 'Por favor ingresa tu número de teléfono fijo!',
-        },
-      ]}
-    >
-      <Input
-        addonBefore={prefixSelector}
-        style={{
-          width: '100%',
-        }}
-      />
-    </Form.Item></Col>
-    
+      <Col span={6}></Col>
+      <Col span={12}></Col>    
   </Row>
     
 
-
+    
   <Row>
   <Col span={6}>
       <Form.Item
-       name="obra social"
-       label="Obra Social"
+       name="costo"
+       label="Costo" style={{width: "160%"}}
       //tooltip="What do you want others to call you?"
       rules={[
         {
           required: false,
-          message: 'Por favor ingresa tu Obra Social!',
+          message: 'Por favor ingresa el costo!',
           whitespace: true,
         },
       ]}
       >
       <Input />
-      </Form.Item></Col>
-
-    
-    <Col span={12}>
-     <Form.Item
-      name="email"
-      label="Correo E-mail"
-      rules={[
-        {
-          type: 'email',
-          message: 'No es un E-mail válido!',
-        },
-        {
-          required: true,
-          message: 'Por favor ingresa tu E-mail!',
-        },
-      ]}
-       >
-      <Input />
-      </Form.Item></Col>
-
+      </Form.Item></Col>    
+      <Col span={12}></Col>
       <Col span={6}></Col>
-      
-  </Row>
-
-
+      </Row>
     </Form>
 );
 };
